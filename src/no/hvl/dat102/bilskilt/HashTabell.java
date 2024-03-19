@@ -18,6 +18,9 @@ public class HashTabell {
 
 	public String leggTil(String s) {
 		int index = s.hashCode() % tabell.length;
+		if (index < 0) {
+			index += tabell.length;
+		}
 		while(tabell[index] != null) {
 			index = (index + 1) % tabell.length;
 		}
