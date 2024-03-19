@@ -14,10 +14,19 @@ public class Main {
 		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
 		// tabellen vil være ca. 2, fordi den ikke er for full, og de fleste elementer
 		// ligger på første plass den får tildelt av hashCode()
+
+		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
+		// som ikke er i tabellen, er ca. 4, fordi det er maks 7 og minst 1
+		// sammenligning.
 		System.out.println(hashTabell);
-		
+
 		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
 		// tabellen vil være ca. 1, fordi bare én av listene inneholder 2 elementer.
+
+		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
+		// som ikke er i tabellen, er ca. 1, fordi vi vet hva liste den vil ligge i, så
+		// den kommer mest sannsynlig til en liste med ett element i, eller en
+		// null-peker.
 		System.out.println(hashTabell2);
 	}
 }
