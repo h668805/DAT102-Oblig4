@@ -1,9 +1,11 @@
 package no.hvl.dat102.bilskilt;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class HashTabell2 {
-	private String[] tabell;
+	private List<String>[] tabell;
 	private int antall;
 	private static final int STANDARD_KAPASITET = 10;
 
@@ -11,8 +13,9 @@ public class HashTabell2 {
 		this(STANDARD_KAPASITET);
 	}
 
+	@SuppressWarnings("unchecked")
 	public HashTabell2(int startKapasitet) {
-		tabell = new String[startKapasitet];
+		tabell = (ArrayList<String>[]) new Object[startKapasitet];
 		antall = 0;
 	}
 
@@ -21,10 +24,13 @@ public class HashTabell2 {
 		if (index < 0) {
 			index += tabell.length;
 		}
-		while(tabell[index] != null) {
-			index = (index + 1) % tabell.length;
+		if (tabell[index] == null) {
+			List<String> liste = new ArrayList<>();
+			liste.add(s);
+			tabell[index] = liste;
+		} else {
+			tabell[index].add(s);
 		}
-		tabell[index] = s;
 		antall++;
 		return s;
 	}
