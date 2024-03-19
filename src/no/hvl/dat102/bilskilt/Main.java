@@ -11,22 +11,27 @@ public class Main {
 			hashTabell2.leggTil(s);
 		}
 
-		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
+		// C)Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
 		// tabellen vil være ca. 2, fordi den ikke er for full, og de fleste elementer
 		// ligger på første plass den får tildelt av hashCode()
 
-		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
+		// d)Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
 		// som ikke er i tabellen, er ca. 4, fordi det er maks 7 og minst 1
 		// sammenligning.
+		
+		//e) Loadfactoren er 0.7 siden det er plass til 10 elementer i tabellen og det er 7 elementer som er lagt til.
 		System.out.println(hashTabell);
 
-		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
+		// c)Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element i
 		// tabellen vil være ca. 1, fordi bare én av listene inneholder 2 elementer.
 
-		// Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
+		// d)Gjennomsnitlig antall kall av equals-metoden når vi søker etter et element
 		// som ikke er i tabellen, er ca. 1, fordi vi vet hva liste den vil ligge i, så
 		// den kommer mest sannsynlig til en liste med ett element i, eller en
 		// null-peker.
+		
+		//e) Loadfactoren er 0.6 det er 4 ledige plasser og 10 er totalkapatsitet.
 		System.out.println(hashTabell2);
 	}
+	
 }
