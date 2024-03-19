@@ -17,7 +17,7 @@ public class HashTabell {
 	}
 
 	public String leggTil(String s) {
-		int index = s.hashCode() % tabell.length;
+		int index = hashFunksjon(s) % tabell.length;
 		if (index < 0) {
 			index += tabell.length;
 		}
@@ -27,6 +27,10 @@ public class HashTabell {
 		tabell[index] = s;
 		antall++;
 		return s;
+	}
+	
+	public static int hashFunksjon(String s) {
+		return Integer.parseInt(s.substring(s.length()-1));
 	}
 
 	@Override
