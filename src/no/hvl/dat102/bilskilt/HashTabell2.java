@@ -15,7 +15,7 @@ public class HashTabell2 {
 
 	@SuppressWarnings("unchecked")
 	public HashTabell2(int startKapasitet) {
-		tabell = (ArrayList<String>[]) new Object[startKapasitet];
+		tabell = (ArrayList<String>[]) new ArrayList[startKapasitet];
 		antall = 0;
 	}
 
